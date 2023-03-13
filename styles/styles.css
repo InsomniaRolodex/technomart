@@ -179,6 +179,7 @@ body {
   background-image: url("../images/logo.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  z-index: 1;
 }
 
 .page-logo::before {
@@ -543,7 +544,7 @@ body {
 .outline-button:active {
   color: #c5c5c5;
   border-color: #c5c5c5;
-  transition-duration: 0.3s ;
+  transition-duration: 0.3s;
 }
 
 .header-modal-enter-button {
@@ -590,6 +591,7 @@ body {
 }
 
 .header-main-navigation-link {
+  position: relative;
   display: flex;
   align-items: center;
   min-height: 62px;
@@ -612,8 +614,19 @@ body {
   transition-duration: 0.3s;
 }
 
-.header-main-navigation-link:active {
+.header-main-navigation-link-active {
+  display: none;
+}
+
+.header-main-navigation-link:active .header-main-navigation-link-active {
+  position: absolute;
+  width: calc(100% - 46px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 700;
+  color: var(--main-bg-color);
 }
 
 .header-user-navigation-list {
@@ -1236,6 +1249,7 @@ body {
 
 .catalog-card-item:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition-duration: 0.3s;
 }
 
 .catalog-card-item:hover .pop-up-menu {
@@ -1349,6 +1363,7 @@ body {
   background-color: #32425c;
   border: none;
   outline: none;
+  transition-duration: 0.3s;
 }
 
 .pagination-link:active {
@@ -1461,6 +1476,11 @@ body {
 
 .contacts-main-text {
   margin-bottom: 31px;
+}
+
+.map-link:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition-duration: 0.3s;
 }
 
 .page-footer {
